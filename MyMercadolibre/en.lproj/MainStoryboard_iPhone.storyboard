@@ -86,7 +86,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="17" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-459" y="-162"/>
+            <point key="canvasLocation" x="577" y="-874"/>
         </scene>
         <!--Login View Controller - Login-->
         <scene sceneID="4VY-N7-AOa">
@@ -96,9 +96,10 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="background.png" translatesAutoresizingMaskIntoConstraints="NO" id="LCG-yz-lgU"/>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l9X-ps-SdY">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="73" id="Liq-gs-S9p"/>
+                                    <constraint firstAttribute="width" constant="104" id="bmq-mm-INj"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Login">
@@ -113,7 +114,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="diazvir2011" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o1A-Bc-jtN">
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="iDD-mq-w4x" id="CIJ-CU-5mz"/>
@@ -122,8 +123,9 @@
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="MELI User" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jc1-Fw-OGX">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="bky-1O-jfc"/>
+                                    <constraint firstAttribute="height" constant="21" id="sS3-0b-8lx"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="21"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -132,11 +134,14 @@
                         <constraints>
                             <constraint firstItem="o1A-Bc-jtN" firstAttribute="top" secondItem="EHQ-jA-vCT" secondAttribute="top" constant="129" id="11z-P5-L3z"/>
                             <constraint firstItem="o1A-Bc-jtN" firstAttribute="centerX" secondItem="Jc1-Fw-OGX" secondAttribute="centerX" type="default" id="5ef-Um-edO"/>
-                            <constraint firstItem="l9X-ps-SdY" firstAttribute="top" secondItem="o1A-Bc-jtN" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Ern-nH-ejA"/>
+                            <constraint firstItem="LCG-yz-lgU" firstAttribute="leading" secondItem="EHQ-jA-vCT" secondAttribute="leading" type="default" id="5yH-Oh-HZe"/>
+                            <constraint firstItem="LCG-yz-lgU" firstAttribute="top" secondItem="EHQ-jA-vCT" secondAttribute="top" type="default" id="D9n-kW-Cf9"/>
+                            <constraint firstItem="LCG-yz-lgU" firstAttribute="bottom" secondItem="EHQ-jA-vCT" secondAttribute="bottom" type="default" id="Dd0-ad-R6e"/>
+                            <constraint firstItem="l9X-ps-SdY" firstAttribute="centerX" secondItem="o1A-Bc-jtN" secondAttribute="centerX" type="default" id="Mq9-bJ-mOk"/>
+                            <constraint firstItem="l9X-ps-SdY" firstAttribute="top" secondItem="EHQ-jA-vCT" secondAttribute="top" constant="173" id="N1c-AE-0XG"/>
                             <constraint firstAttribute="trailing" secondItem="o1A-Bc-jtN" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="YHb-Dx-8iT"/>
                             <constraint firstItem="o1A-Bc-jtN" firstAttribute="leading" secondItem="EHQ-jA-vCT" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="cHo-1I-xqz"/>
                             <constraint firstItem="Jc1-Fw-OGX" firstAttribute="top" secondItem="EHQ-jA-vCT" secondAttribute="top" constant="94" id="oTg-V7-etF"/>
-                            <constraint firstItem="l9X-ps-SdY" firstAttribute="centerX" secondItem="o1A-Bc-jtN" secondAttribute="centerX" type="default" id="vD5-FZ-hZ2"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Login" id="EDX-3w-VOb"/>
@@ -170,7 +175,7 @@
                                                 <constraint firstAttribute="width" constant="90" id="yP7-9e-zNd"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="101" contentMode="left" text="Saxo Alto Selmer Paris Mark VI Plateado" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DeK-Xb-QiA">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="101" contentMode="left" text="Saxo Alto Selmer Paris Mark VI Plateado" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="219" translatesAutoresizingMaskIntoConstraints="NO" id="DeK-Xb-QiA">
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="26" id="EO1-RI-0hU"/>
                                                 <constraint firstAttribute="width" constant="219" id="qKt-4v-qXQ"/>
@@ -221,7 +226,21 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U6H-P5-hsM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="585" y="-152"/>
+            <point key="canvasLocation" x="116" y="-152"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="BSp-on-pln">
+            <objects>
+                <viewController id="2Ya-C8-Lo3" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VGI-mN-eIx">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2t9-Nv-bzw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="577" y="-152"/>
         </scene>
         <!--Detail View Controller - Detail-->
         <scene sceneID="24">
@@ -231,8 +250,8 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" text="Detail view content goes here" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="27">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="background.png" translatesAutoresizingMaskIntoConstraints="NO" id="eeM-YQ-iZ3"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" text="Detail view content goes here" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="27">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="Opk-uB-of0"/>
                                 </constraints>
@@ -279,8 +298,11 @@
                             <constraint firstItem="n0f-4r-gxJ" firstAttribute="top" secondItem="evt-gd-6c2" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Uiz-PB-jGw"/>
                             <constraint firstItem="n0f-4r-gxJ" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="cAe-73-pNQ"/>
                             <constraint firstAttribute="bottom" secondItem="DeZ-Ld-18B" secondAttribute="bottom" constant="65" id="dBT-kS-THp"/>
+                            <constraint firstItem="eeM-YQ-iZ3" firstAttribute="bottom" secondItem="22" secondAttribute="bottom" type="default" id="ee8-cJ-cyy"/>
                             <constraint firstItem="evt-gd-6c2" firstAttribute="top" secondItem="27" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="jjD-NS-X0V"/>
                             <constraint firstItem="27" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="oPt-97-EUN"/>
+                            <constraint firstItem="eeM-YQ-iZ3" firstAttribute="top" secondItem="22" secondAttribute="top" type="default" id="r6g-kb-f7p"/>
+                            <constraint firstItem="eeM-YQ-iZ3" firstAttribute="leading" secondItem="22" secondAttribute="leading" type="default" id="tvW-yd-EKX"/>
                             <constraint firstAttribute="trailing" secondItem="evt-gd-6c2" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="u6h-Ct-zdy"/>
                             <constraint firstAttribute="trailing" secondItem="27" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="xTi-nd-uwR"/>
                         </constraints>
@@ -293,9 +315,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="23" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="94" y="-152"/>
+            <point key="canvasLocation" x="-451" y="-152"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="background.png" width="320" height="480"/>
+    </resources>
     <classes>
         <class className="DetailViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailViewController.h"/>

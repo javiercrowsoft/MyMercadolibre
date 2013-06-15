@@ -45,6 +45,7 @@
 		3BE168BC176D28C300223015 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BE168BA176D28C300223015 /* placeholder.png */; };
 		3BE168BF176D294400223015 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BE168BD176D28DC00223015 /* icon.png */; };
 		3BE168C1176D2A0400223015 /* icon-retina.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BE168C0176D2A0400223015 /* icon-retina.png */; };
+		3BE168C3176D324A00223015 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BE168C2176D324A00223015 /* background.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +119,7 @@
 		3BE168BA176D28C300223015 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = placeholder.png; path = MyMercadolibre/Images/placeholder.png; sourceTree = "<group>"; };
 		3BE168BD176D28DC00223015 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		3BE168C0176D2A0400223015 /* icon-retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-retina.png"; sourceTree = "<group>"; };
+		3BE168C2176D324A00223015 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,6 +272,7 @@
 		3BE168AC176CC28900223015 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3BE168C2176D324A00223015 /* background.png */,
 				3BE168BA176D28C300223015 /* placeholder.png */,
 				3BE168AD176CC2FE00223015 /* shame.png */,
 			);
@@ -358,6 +361,7 @@
 				3BE168BC176D28C300223015 /* placeholder.png in Resources */,
 				3BE168BF176D294400223015 /* icon.png in Resources */,
 				3BE168C1176D2A0400223015 /* icon-retina.png in Resources */,
+				3BE168C3176D324A00223015 /* background.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
