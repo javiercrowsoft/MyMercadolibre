@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+#import "ItemListViewController.h"
 
 @interface DetailViewController ()
 
@@ -69,6 +70,15 @@
     // Called when the view is shown again in the split view, invalidating the button and popover controller.
     [self.navigationItem setLeftBarButtonItem:nil animated:YES];
     self.masterPopoverController = nil;
+}
+
+#pragma mark - Segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"showItemList"]) {
+        [[segue destinationViewController] setSellerId:self.sellerId];
+    }
 }
 
 @end

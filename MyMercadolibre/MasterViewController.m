@@ -129,8 +129,11 @@
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         NSArray *data = [self.response objectForKey:@"data"];
         NSDictionary *seller = [data objectAtIndex:indexPath.row];
-        NSDate *object = [seller objectForKey:@"seller_name"];
-        [[segue destinationViewController] setDetailItem:object];
+        NSString *seller_name = [seller objectForKey:@"seller_name"];
+        NSString *seller_id = [seller objectForKey:@"seller_id"];
+        id destination = [segue destinationViewController];
+        [destination setDetailItem:seller_name];
+        [destination setSellerId:seller_id];
     }
 }
 

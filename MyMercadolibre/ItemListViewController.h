@@ -10,4 +10,6 @@
 
 @interface ItemListViewController : UITableViewController
 
+@property (strong, nonatomic) NSString *sellerId;
+
 @end
