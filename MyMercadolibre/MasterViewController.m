@@ -66,7 +66,6 @@
 
     NSArray *data = [self.response objectForKey:@"data"];
     NSDictionary *seller = [data objectAtIndex:indexPath.row];
-    //cell.textLabel.text = [seller objectForKey:@"seller_name"];
     
     UIImageView *itemImageView = (UIImageView *)[cell viewWithTag:100];
     itemImageView.image = [UIImage imageNamed:@"shame.png"];
@@ -76,7 +75,6 @@
     
     UILabel *itemBoughtLabel = (UILabel *)[cell viewWithTag:102];
     itemBoughtLabel.text = [seller objectForKey:@"item_name"];
-
     
     return cell;
 }

@@ -10,6 +10,10 @@
 
 @interface ItemListViewController ()
 
+@property(strong) NSDictionary *response;
+
+- (void)getItemList;
+
 @end
 
 @implementation ItemListViewController
@@ -32,6 +36,8 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    [self getItemList];
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,27 +50,36 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    if (!self.response)
+        return 0;
+    NSInteger count = [[self.response objectForKey:@"results"] count];
+    return count; //[[self.response objectForKey:@"results"] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
-    // Configure the cell...
+    NSArray *data = [self.response objectForKey:@"results"];
+    NSDictionary *item = [data objectAtIndex:indexPath.row];
+    
+    UIImageView *itemImageView = (UIImageView *)[cell viewWithTag:100];
+    itemImageView.image = [UIImage imageNamed:@"shame.png"];
+    
+    UILabel *titleLabel = (UILabel *)[cell viewWithTag:101];
+    titleLabel.text = [item objectForKey:@"title"];
+    
+    UILabel *subtitleLabel = (UILabel *)[cell viewWithTag:102];
+    subtitleLabel.text = [item objectForKey:@"subtitle"];    
     
     return cell;
 }
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -116,6 +131,32 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+}
+
+#pragma mark - Delegate Implementation
+
+- (void)meliAPIHTTPClient:(MeliAPIHTTPClient *)client didUpdateWithItems:(id)items
+{
+    self.response = items;
+    [self.tableView reloadData];
+}
+
+- (void)meliAPIHTTPClient:(MeliAPIHTTPClient *)client didFailWithError:(NSError *)error
+{
+    UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Error Retrieving Items for a Seller"
+                                                 message:[NSString stringWithFormat:@"%@",error]
+                                                delegate:nil
+                                       cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [av show];
+}
+
+#pragma mark - Delegate Implementation
+
+- (void)getItemList
+{
+    MeliAPIHTTPClient *client = [MeliAPIHTTPClient sharedMeliAPIHTTPClient];
+    client.delegate = self;
+    [client updateItemListForUserId:self.sellerId];
 }
 
 @end

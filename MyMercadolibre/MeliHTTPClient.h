@@ -8,11 +8,11 @@
 
 #import "AFHTTPClient.h"
 
-@protocol MeliHttpClientDelegate;
+@protocol MeliHTTPClientDelegate;
 
 @interface MeliHTTPClient : AFHTTPClient
 
-@property(weak) id<MeliHttpClientDelegate> delegate;
+@property(weak) id<MeliHTTPClientDelegate> delegate;
 
 + (MeliHTTPClient *)sharedMeliHTTPClient;
 - (id)initWithBaseURL:(NSURL *)url;
@@ -20,7 +20,7 @@
 
 @end
 
-@protocol MeliHttpClientDelegate <NSObject>
+@protocol MeliHTTPClientDelegate <NSObject>
 - (void)meliHTTPClient:(MeliHTTPClient *)client didUpdateWithSellers:(id)sellers;
 - (void)meliHTTPClient:(MeliHTTPClient *)client didFailWithError:(NSError *)error;
 @end

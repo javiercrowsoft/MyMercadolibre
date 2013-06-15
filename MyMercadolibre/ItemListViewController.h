@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MeliAPIHttpClient.h"
 
-@interface ItemListViewController : UITableViewController
+@interface ItemListViewController : UITableViewController <MeliAPIHTTPClientDelegate>
 
 @property (strong, nonatomic) NSString *sellerId;
 

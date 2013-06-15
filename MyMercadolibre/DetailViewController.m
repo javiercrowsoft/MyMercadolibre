@@ -47,6 +47,11 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+
+    // TODO: verify if we need to do something like this
+    //
+    // self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    
     [self configureView];
 }
 
