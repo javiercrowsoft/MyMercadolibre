@@ -68,6 +68,8 @@
     NSDictionary *seller = [data objectAtIndex:indexPath.row];
     //cell.textLabel.text = [seller objectForKey:@"seller_name"];
     
+    UIImageView *itemImageView = (UIImageView *)[cell viewWithTag:100];
+    itemImageView.image = [UIImage imageNamed:@"shame.png"];
     
     UILabel *sellerNameLabel = (UILabel *)[cell viewWithTag:101];
     sellerNameLabel.text = [seller objectForKey:@"seller_name"];
