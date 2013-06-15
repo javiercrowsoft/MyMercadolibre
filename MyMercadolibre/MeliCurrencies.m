@@ -10,7 +10,7 @@
 
 @interface MeliCurrencies ()
 
-@property (strong, nonatomic) NSDictionary *currencies;
+@property (strong, nonatomic) NSArray *currencies;
 @property (strong, nonatomic) NSNumberFormatter *formatter;
 
 @end
@@ -20,79 +20,79 @@
 {
     NSString *currencies =
     @"[\
-    - {\
+     {\
         \"id\": \"BRL\",\
         \"description\": \"Real\",\
         \"symbol\": \"R$\",\
         \"decimal_places\": 2,\
     },\
-    - {\
+     {\
         \"id\": \"UYU\",\
         \"description\": \"Peso Uruguayo\",\
         \"symbol\": \"$\",\
         \"decimal_places\": 2,\
     },\
-    - {\
+     {\
         \"id\": \"CLP\",\
         \"description\": \"Peso Chileno\",\
         \"symbol\": \"$\",\
         \"decimal_places\": 0,\
     },\
-    - {\
+     {\
         \"id\": \"MXN\",\
         \"description\": \"Peso Mexicano\",\
         \"symbol\": \"$\",\
         \"decimal_places\": 2,\
     },\
-    - {\
+     {\
         \"id\": \"DOP\",\
         \"description\": \"Peso Dominicano\",\
         \"symbol\": \"$\",\
         \"decimal_places\": 2,\
     },\
-    - {\
+     {\
         \"id\": \"PAB\",\
         \"description\": \"Balboa\",\
         \"symbol\": \"B/.\",\
         \"decimal_places\": 2,\
     },\
-    - {\
+     {\
         \"id\": \"COP\",\
         \"description\": \"Peso colombiano\",\
         \"symbol\": \"$\",\
         \"decimal_places\": 0,\
     },\
-    - {\
+     {\
         \"id\": \"VEF\",\
         \"description\": \"Bolivar fuerte\",\
         \"symbol\": \"BsF\",\
         \"decimal_places\": 2,\
     },\
-    - {\
+     {\
         \"id\": \"EUR\",\
         \"description\": \"Euro\",\
         \"symbol\": \"€\",\
         \"decimal_places\": 2,\
     },\
-    - {\
+     {\
         \"id\": \"PEN\",\
         \"description\": \"Soles\",\
         \"symbol\": \"S/.\",\
         \"decimal_places\": 2,\
     },\
-    - {\
+     {\
         \"id\": \"CRC\",\
         \"description\": \"Colones\",\
         \"symbol\": \"¢\",\
         \"decimal_places\": 2,\
     },\
-    - {\
+     {\
         \"id\": \"ARS\",\
         \"description\": \"Peso argentino\",\
         \"symbol\": \"$\",\
         \"decimal_places\": 2,\
     },\
-    - {\
+     {\
         \"id\": \"USD\",\
         \"description\": \"Dolar\",\
         \"symbol\": \"U$S\",\
@@ -118,7 +118,7 @@
     self.currencies = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
 
     self.formatter = [[NSNumberFormatter alloc] init];
-    [self.formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+    [self.formatter setNumberStyle:NSNumberFormatterDecimalStyle];
     NSString *groupingSeparator = [[NSLocale currentLocale] objectForKey:NSLocaleGroupingSeparator];
     [self.formatter setGroupingSeparator:groupingSeparator];
     [self.formatter setGroupingSize:3];
@@ -128,9 +128,24 @@
     return self;
 }
 
-- (NSString *) priceFromNumber:(NSNumber *)number
+- (NSString *) priceFromNumber:(NSNumber *)number WithCurrencyName:(NSString *)aCurrencyName;
 {
-    return [self.formatter stringFromNumber:number];
+    NSString *symbol = @"";
+    for (id currency in self.currencies) {
+        NSString *currencyName = [currency objectForKey:@"id"];
+        if ([aCurrencyName isEqualToString:currencyName]) {
+            symbol = [currency objectForKey:@"symbol"];
+            break;
+        }
+    }
+
+    NSString *price = [self.formatter stringFromNumber:number];
+    if ([symbol length] != 0) {
+        return [NSString stringWithFormat:@"%@ %@", symbol, price];
+    }
+    else {
+        return price;
+    }
 }
 
 //

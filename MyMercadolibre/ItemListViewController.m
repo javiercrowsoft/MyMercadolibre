@@ -70,9 +70,6 @@
     NSArray *data = [self.response objectForKey:@"results"];
     NSDictionary *item = [data objectAtIndex:indexPath.row];
     
-//    UIImageView *itemImageView = (UIImageView *)[cell viewWithTag:100];
-//    itemImageView.image = [UIImage imageNamed:@"shame.png"];
-    
     UILabel *titleLabel = (UILabel *)[cell viewWithTag:101];
     titleLabel.text = [item objectForKey:@"title"];
     
@@ -90,7 +87,7 @@
     UILabel *priceLabel = (UILabel *)[cell viewWithTag:103];
     NSNumber *price = [item objectForKey:@"price"];
     if (![price isKindOfClass:[NSNull class]]) {
-        priceLabel.text = [curencies priceFromNumber:price];
+        priceLabel.text = [curencies priceFromNumber:price WithCurrencyName:[item objectForKey:@"currency_id"]];
     }
     else {
         priceLabel.text = @"-";

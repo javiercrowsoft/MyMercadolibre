@@ -12,6 +12,6 @@
 
 + (MeliCurrencies *)sharedMeliCurrencies;
 - (id)initWithCurrencies:(NSString *)currencies;
-- (NSString *) priceFromNumber:(NSNumber *)number;
+- (NSString *) priceFromNumber:(NSNumber *)number WithCurrencyName:(NSString *)currency;
 
 @end
