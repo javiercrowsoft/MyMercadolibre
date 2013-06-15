@@ -8,6 +8,7 @@
 
 #import "ItemListViewController.h"
 #import "UIImageView+AFNetworking.h"
+#import "MeliCurrencies.h"
 
 @interface ItemListViewController ()
 
@@ -82,6 +83,17 @@
     }
     else {
         subtitleLabel.text = @"";
+    }
+
+    MeliCurrencies *curencies = [MeliCurrencies sharedMeliCurrencies];
+    
+    UILabel *priceLabel = (UILabel *)[cell viewWithTag:103];
+    NSNumber *price = [item objectForKey:@"price"];
+    if (![price isKindOfClass:[NSNull class]]) {
+        priceLabel.text = [curencies priceFromNumber:price];
+    }
+    else {
+        priceLabel.text = @"-";
     }
     
     NSString *thumbnail = [item objectForKey:@"thumbnail"];

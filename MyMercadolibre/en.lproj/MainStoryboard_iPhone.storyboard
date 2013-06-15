@@ -65,11 +65,11 @@
                                 <constraints>
                                     <constraint firstItem="SUA-Qo-uqk" firstAttribute="leading" secondItem="lJ0-d7-vTF" secondAttribute="leading" constant="20" type="default" id="1Pn-47-mLv"/>
                                     <constraint firstItem="Gzi-cP-cUa" firstAttribute="top" secondItem="lJ0-d7-vTF" secondAttribute="top" constant="11" id="M7V-GB-Lzb"/>
+                                    <constraint firstItem="SUA-Qo-uqk" firstAttribute="top" secondItem="lJ0-d7-vTF" secondAttribute="top" constant="7" id="V2H-Gx-NUo"/>
                                     <constraint firstItem="Gzi-cP-cUa" firstAttribute="leading" secondItem="lJ0-d7-vTF" secondAttribute="leading" constant="92" id="jkZ-pB-rXh"/>
                                     <constraint firstItem="RsQ-wL-JME" firstAttribute="top" secondItem="Gzi-cP-cUa" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="kbd-yD-208"/>
                                     <constraint firstItem="RsQ-wL-JME" firstAttribute="trailing" secondItem="Gzi-cP-cUa" secondAttribute="trailing" type="default" id="laB-Sm-04u"/>
                                     <constraint firstItem="RsQ-wL-JME" firstAttribute="leading" secondItem="Gzi-cP-cUa" secondAttribute="leading" type="default" id="qAV-tW-Lxh"/>
-                                    <constraint firstItem="SUA-Qo-uqk" firstAttribute="top" secondItem="lJ0-d7-vTF" secondAttribute="top" constant="24" id="wU0-cz-QXH"/>
                                 </constraints>
                                 <connections>
                                     <segue destination="21" kind="push" identifier="showDetail" id="jZb-fq-zAk"/>
@@ -152,38 +152,48 @@
         <scene sceneID="HRc-nv-eKC">
             <objects>
                 <tableViewController id="ymp-RW-4k4" customClass="ItemListViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="71" sectionHeaderHeight="22" sectionFooterHeight="22" id="7ig-nG-aUQ">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" id="7ig-nG-aUQ">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="byc-Eg-MRR">
-                                <rect key="frame" x="0.0" y="22" width="320" height="71"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="byc-Eg-MRR">
+                                <rect key="frame" x="0.0" y="22" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="99"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ocn-Eu-Ynd">
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="50" id="3GK-oX-HbW"/>
-                                                <constraint firstAttribute="height" constant="50" id="Uek-lv-qqM"/>
+                                                <constraint firstAttribute="height" constant="58" id="TnY-Ks-lcO"/>
+                                                <constraint firstAttribute="width" constant="58" id="ayI-kG-lW1"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="101" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DeK-Xb-QiA">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="101" contentMode="left" text="Saxo Alto Selmer Paris Mark VI Plateado" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DeK-Xb-QiA">
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="186" id="vkN-0Q-eAf"/>
-                                                <constraint firstAttribute="height" constant="21" id="vxk-fq-HgX"/>
+                                                <constraint firstAttribute="height" constant="26" id="EO1-RI-0hU"/>
+                                                <constraint firstAttribute="width" constant="219" id="qKt-4v-qXQ"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="21"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="15"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="102" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vcd-cP-lf1">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="102" contentMode="left" text="Description" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="186" translatesAutoresizingMaskIntoConstraints="NO" id="vcd-cP-lf1">
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="33" id="nA7-eY-rJa"/>
+                                                <constraint firstAttribute="height" constant="42" id="Inv-Mq-BLu"/>
+                                                <constraint firstAttribute="width" constant="186" id="oul-Xh-z7w"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="103" contentMode="left" text="$ 25,500.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F38-07-6mo">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="188" id="5TV-3b-eAf"/>
+                                                <constraint firstAttribute="height" constant="21" id="LUb-6z-Auo"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
@@ -192,11 +202,12 @@
                                 </view>
                                 <constraints>
                                     <constraint firstItem="vcd-cP-lf1" firstAttribute="top" secondItem="byc-Eg-MRR" secondAttribute="top" constant="32" id="2Rc-Qc-Ug4"/>
-                                    <constraint firstItem="vcd-cP-lf1" firstAttribute="trailing" secondItem="DeK-Xb-QiA" secondAttribute="trailing" type="default" id="5rK-L9-2kd"/>
                                     <constraint firstItem="ocn-Eu-Ynd" firstAttribute="top" secondItem="byc-Eg-MRR" secondAttribute="top" constant="7" id="9gf-IO-udi"/>
                                     <constraint firstItem="ocn-Eu-Ynd" firstAttribute="leading" secondItem="byc-Eg-MRR" secondAttribute="leading" constant="20" type="default" id="Eq0-rR-4Kw"/>
+                                    <constraint firstAttribute="bottom" secondItem="F38-07-6mo" secondAttribute="bottom" constant="7" id="Mlr-mO-q3w"/>
+                                    <constraint firstItem="DeK-Xb-QiA" firstAttribute="leading" secondItem="byc-Eg-MRR" secondAttribute="leading" constant="97" id="PBQ-pF-ZJN"/>
                                     <constraint firstItem="vcd-cP-lf1" firstAttribute="leading" secondItem="DeK-Xb-QiA" secondAttribute="leading" type="default" id="ccH-AD-uKR"/>
-                                    <constraint firstItem="DeK-Xb-QiA" firstAttribute="leading" secondItem="byc-Eg-MRR" secondAttribute="leading" constant="92" id="tSS-Qg-MzK"/>
+                                    <constraint firstItem="F38-07-6mo" firstAttribute="leading" secondItem="vcd-cP-lf1" secondAttribute="leading" type="default" id="iDT-Yy-lms"/>
                                     <constraint firstItem="DeK-Xb-QiA" firstAttribute="top" secondItem="ocn-Eu-Ynd" secondAttribute="top" type="default" id="wT2-23-KU3"/>
                                 </constraints>
                             </tableViewCell>
@@ -222,7 +233,10 @@
                         <subviews>
                             <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" text="Detail view content goes here" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="27">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" size="system"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="Opk-uB-of0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="24"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -242,19 +256,39 @@
                                     <segue destination="ymp-RW-4k4" kind="push" identifier="showItemList" id="qcH-5w-8xD"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n0f-4r-gxJ">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="iNw-fB-kAj"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="evt-gd-6c2">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="129" id="DaO-Za-gUS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="evt-gd-6c2" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="1m0-Ep-pgK"/>
+                            <constraint firstItem="DeZ-Ld-18B" firstAttribute="centerX" secondItem="n0f-4r-gxJ" secondAttribute="centerX" type="default" id="5eT-cQ-joe"/>
+                            <constraint firstItem="27" firstAttribute="top" secondItem="22" secondAttribute="top" constant="56" id="AWd-Ld-you"/>
+                            <constraint firstAttribute="trailing" secondItem="n0f-4r-gxJ" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Fgg-dx-wsO"/>
+                            <constraint firstItem="n0f-4r-gxJ" firstAttribute="top" secondItem="evt-gd-6c2" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Uiz-PB-jGw"/>
+                            <constraint firstItem="n0f-4r-gxJ" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="cAe-73-pNQ"/>
                             <constraint firstAttribute="bottom" secondItem="DeZ-Ld-18B" secondAttribute="bottom" constant="65" id="dBT-kS-THp"/>
-                            <constraint firstItem="DeZ-Ld-18B" firstAttribute="centerX" secondItem="27" secondAttribute="centerX" type="default" id="fmb-1R-wux"/>
+                            <constraint firstItem="evt-gd-6c2" firstAttribute="top" secondItem="27" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="jjD-NS-X0V"/>
                             <constraint firstItem="27" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="oPt-97-EUN"/>
-                            <constraint firstItem="27" firstAttribute="top" secondItem="22" secondAttribute="top" constant="70" id="rx6-fx-b9k"/>
+                            <constraint firstAttribute="trailing" secondItem="evt-gd-6c2" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="u6h-Ct-zdy"/>
                             <constraint firstAttribute="trailing" secondItem="27" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="xTi-nd-uwR"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Detail" id="26"/>
                     <connections>
-                        <outlet property="detailDescriptionLabel" destination="27" id="28"/>
+                        <outlet property="detailDescriptionLabel" destination="evt-gd-6c2" id="JlM-0K-owN"/>
+                        <outlet property="detailSellerLabel" destination="27" id="WjA-T1-ZQv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="23" sceneMemberID="firstResponder"/>
@@ -267,6 +301,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="detailDescriptionLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="detailSellerLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="ItemListViewController" superclassName="UITableViewController">

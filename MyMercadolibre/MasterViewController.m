@@ -159,9 +159,11 @@
         NSArray *data = [self.response objectForKey:@"data"];
         NSDictionary *seller = [data objectAtIndex:indexPath.row];
         NSString *seller_name = [seller objectForKey:@"seller_name"];
+        NSString *item_name = [seller objectForKey:@"item_name"];
         NSString *seller_id = [seller objectForKey:@"seller_id"];
         id destination = [segue destinationViewController];
-        [destination setDetailItem:seller_name];
+        [destination setSellerName:seller_name];
+        [destination setDetailItem:item_name];
         [destination setSellerId:seller_id];
     }
 }

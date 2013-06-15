@@ -38,6 +38,9 @@
 {
     // Update the user interface for the detail item.
 
+    if (self.sellerName) {
+        self.detailSellerLabel.text = [self.sellerName description];
+    }
     if (self.detailItem) {
         self.detailDescriptionLabel.text = [self.detailItem description];
     }
