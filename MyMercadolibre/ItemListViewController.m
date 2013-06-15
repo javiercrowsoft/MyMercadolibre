@@ -69,22 +69,40 @@
     NSArray *data = [self.response objectForKey:@"results"];
     NSDictionary *item = [data objectAtIndex:indexPath.row];
     
-    UIImageView *itemImageView = (UIImageView *)[cell viewWithTag:100];
-    itemImageView.image = [UIImage imageNamed:@"shame.png"];
+//    UIImageView *itemImageView = (UIImageView *)[cell viewWithTag:100];
+//    itemImageView.image = [UIImage imageNamed:@"shame.png"];
     
     UILabel *titleLabel = (UILabel *)[cell viewWithTag:101];
     titleLabel.text = [item objectForKey:@"title"];
     
     UILabel *subtitleLabel = (UILabel *)[cell viewWithTag:102];
     NSString *subtitle = [item objectForKey:@"subtitle"];
-    if ([subtitle isKindOfClass:[NSNull class]]) {
+    if (![subtitle isKindOfClass:[NSNull class]]) {
         subtitleLabel.text = subtitle;
     }
     else {
         subtitleLabel.text = @"";
     }
     
-    __weak UITableViewCell *weakCell = cell;
+    NSString *thumbnail = [item objectForKey:@"thumbnail"];
+    if (![thumbnail isKindOfClass:[NSNull class]]) {
+
+        __weak UITableViewCell *weakCell = cell;
+        
+        [cell.imageView setImageWithURLRequest:[[NSURLRequest alloc] initWithURL:[NSURL URLWithString:thumbnail]]
+                              placeholderImage:[UIImage imageNamed:@"placeholder.png"]
+                                       success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image){
+                                           weakCell.imageView.image = image;
+                                           
+                                           //only required if no placeholder is set to force the imageview on the cell to be laid out to house the new image.
+                                           //if(weakCell.imageView.frame.size.height==0 || weakCell.imageView.frame.size.width==0 ){
+                                           [weakCell setNeedsLayout];
+                                           //}
+                                       }
+                                       failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error){
+                                           
+                                       }];        
+    }
     
     return cell;
 }
