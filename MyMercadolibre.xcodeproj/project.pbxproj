@@ -41,6 +41,7 @@
 		3BD3C2D0176A4B9B004CC1D0 /* MyMercadolibreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD3C2CF176A4B9B004CC1D0 /* MyMercadolibreTests.m */; };
 		3BE168AE176CC2FE00223015 /* shame.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BE168AD176CC2FE00223015 /* shame.png */; };
 		3BE168B1176CC79400223015 /* ItemListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE168B0176CC79400223015 /* ItemListViewController.m */; };
+		3BE168B3176CF3B900223015 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BE168B2176CF3B900223015 /* placeholder.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +110,7 @@
 		3BE168AD176CC2FE00223015 /* shame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = shame.png; path = MyMercadolibre/Images/shame.png; sourceTree = "<group>"; };
 		3BE168AF176CC79400223015 /* ItemListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemListViewController.h; sourceTree = "<group>"; };
 		3BE168B0176CC79400223015 /* ItemListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemListViewController.m; sourceTree = "<group>"; };
+		3BE168B2176CF3B900223015 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,6 +259,7 @@
 		3BE168AC176CC28900223015 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3BE168B2176CF3B900223015 /* placeholder.png */,
 				3BE168AD176CC2FE00223015 /* shame.png */,
 			);
 			name = Images;
@@ -341,6 +344,7 @@
 				3BD3C2B2176A4B9B004CC1D0 /* MainStoryboard_iPhone.storyboard in Resources */,
 				3BD3C2B5176A4B9B004CC1D0 /* MainStoryboard_iPad.storyboard in Resources */,
 				3BE168AE176CC2FE00223015 /* shame.png in Resources */,
+				3BE168B3176CF3B900223015 /* placeholder.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -23,16 +23,16 @@
         <scene sceneID="18">
             <objects>
                 <tableViewController storyboardIdentifier="" title="Master" id="12" customClass="MasterViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="71" sectionHeaderHeight="22" sectionFooterHeight="22" id="13">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" id="13">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="lJ0-d7-vTF">
-                                <rect key="frame" x="0.0" y="22" width="320" height="71"/>
+                                <rect key="frame" x="0.0" y="22" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="70"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="99"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SUA-Qo-uqk">
@@ -50,11 +50,11 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="102" contentMode="left" text="Item bought" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RsQ-wL-JME">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="102" contentMode="left" text="Item bought" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="186" translatesAutoresizingMaskIntoConstraints="NO" id="RsQ-wL-JME">
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="33" id="Cmv-DE-dIl"/>
+                                                <constraint firstAttribute="height" constant="53" id="LWD-ZR-KWE"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
@@ -64,12 +64,12 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="SUA-Qo-uqk" firstAttribute="leading" secondItem="lJ0-d7-vTF" secondAttribute="leading" constant="20" type="default" id="1Pn-47-mLv"/>
-                                    <constraint firstItem="Gzi-cP-cUa" firstAttribute="top" secondItem="SUA-Qo-uqk" secondAttribute="top" type="default" id="7dN-Ct-TSv"/>
-                                    <constraint firstItem="SUA-Qo-uqk" firstAttribute="top" secondItem="lJ0-d7-vTF" secondAttribute="top" constant="7" id="QP9-2y-3i7"/>
+                                    <constraint firstItem="Gzi-cP-cUa" firstAttribute="top" secondItem="lJ0-d7-vTF" secondAttribute="top" constant="11" id="M7V-GB-Lzb"/>
                                     <constraint firstItem="Gzi-cP-cUa" firstAttribute="leading" secondItem="lJ0-d7-vTF" secondAttribute="leading" constant="92" id="jkZ-pB-rXh"/>
+                                    <constraint firstItem="RsQ-wL-JME" firstAttribute="top" secondItem="Gzi-cP-cUa" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="kbd-yD-208"/>
                                     <constraint firstItem="RsQ-wL-JME" firstAttribute="trailing" secondItem="Gzi-cP-cUa" secondAttribute="trailing" type="default" id="laB-Sm-04u"/>
                                     <constraint firstItem="RsQ-wL-JME" firstAttribute="leading" secondItem="Gzi-cP-cUa" secondAttribute="leading" type="default" id="qAV-tW-Lxh"/>
-                                    <constraint firstItem="RsQ-wL-JME" firstAttribute="bottom" secondItem="SUA-Qo-uqk" secondAttribute="bottom" type="default" id="tuA-LP-jmM"/>
+                                    <constraint firstItem="SUA-Qo-uqk" firstAttribute="top" secondItem="lJ0-d7-vTF" secondAttribute="top" constant="24" id="wU0-cz-QXH"/>
                                 </constraints>
                                 <connections>
                                     <segue destination="21" kind="push" identifier="showDetail" id="jZb-fq-zAk"/>

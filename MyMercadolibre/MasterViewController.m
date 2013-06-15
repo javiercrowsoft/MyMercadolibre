@@ -8,6 +8,7 @@
 
 #import "MasterViewController.h"
 #import "DetailViewController.h"
+#import "UIImageView+AFNetworking.h"
 
 @interface MasterViewController ()
 
@@ -62,19 +63,49 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    // Configure the cell...
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    }
 
     NSArray *data = [self.response objectForKey:@"data"];
-    NSDictionary *seller = [data objectAtIndex:indexPath.row];
     
-    UIImageView *itemImageView = (UIImageView *)[cell viewWithTag:100];
-    itemImageView.image = [UIImage imageNamed:@"shame.png"];
+    NSUInteger row = indexPath.row;
+    NSDictionary *seller = [data objectAtIndex:row];
     
     UILabel *sellerNameLabel = (UILabel *)[cell viewWithTag:101];
     sellerNameLabel.text = [seller objectForKey:@"seller_name"];
     
     UILabel *itemBoughtLabel = (UILabel *)[cell viewWithTag:102];
     itemBoughtLabel.text = [seller objectForKey:@"item_name"];
+
+    UIImageView *itemImageView = (UIImageView *)[cell viewWithTag:100];
+    
+    NSString *itemId = [seller objectForKey:@"item_id"];
+    
+    itemImageView.image = nil;
+    
+    __weak UITableViewCell *weakCell = cell;
+    
+    NSString *link = [@"http://www.crowsoft.com.ar/cscvxi/get_meli_item_image.php?item_id=" stringByAppendingString:itemId];
+    
+    [cell.imageView setImageWithURLRequest:[[NSURLRequest alloc] initWithURL:[NSURL URLWithString:link]]
+                          placeholderImage:[UIImage imageNamed:@"placeholder.png"]
+                                   success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image){
+                                       weakCell.imageView.image = image;
+                                       
+                                       //only required if no placeholder is set to force the imageview on the cell to be laid out to house the new image.
+                                       //if(weakCell.imageView.frame.size.height==0 || weakCell.imageView.frame.size.width==0 ){
+                                       [weakCell setNeedsLayout];
+                                       //}
+                                   }
+                                   failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error){
+                                       
+                                   }];
     
     return cell;
 }

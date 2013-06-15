@@ -7,6 +7,7 @@
 //
 
 #import "ItemListViewController.h"
+#import "UIImageView+AFNetworking.h"
 
 @interface ItemListViewController ()
 
@@ -75,7 +76,15 @@
     titleLabel.text = [item objectForKey:@"title"];
     
     UILabel *subtitleLabel = (UILabel *)[cell viewWithTag:102];
-    subtitleLabel.text = [item objectForKey:@"subtitle"];    
+    NSString *subtitle = [item objectForKey:@"subtitle"];
+    if ([subtitle isKindOfClass:[NSNull class]]) {
+        subtitleLabel.text = subtitle;
+    }
+    else {
+        subtitleLabel.text = @"";
+    }
+    
+    __weak UITableViewCell *weakCell = cell;
     
     return cell;
 }
