@@ -17,6 +17,7 @@
 + (MeliAPIHTTPClient *)sharedMeliAPIHTTPClient;
 - (id)initWithBaseURL:(NSURL *)url;
 - (void)updateItemListForUserId:(NSString *)userId;
+- (void)updateItemListForText:(NSString *)searchText;
 
 @end
 

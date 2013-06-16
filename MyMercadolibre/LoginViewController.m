@@ -7,12 +7,13 @@
 //
 
 #import "LoginViewController.h"
-
 #import "MasterViewController.h"
+#import "ItemListViewController.h"
 
 @interface LoginViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *nickText;
+@property (weak, nonatomic) IBOutlet UITextField *searchText;
 
 @end
 
@@ -54,6 +55,11 @@
 {
     if ([[segue identifier] isEqualToString:@"showMaster"]) {
         [[segue destinationViewController] setNick:self.nickText.text];
+    }
+    else {
+        if ([[segue identifier] isEqualToString:@"showSearch"]) {
+            [[segue destinationViewController] setSearchText:self.searchText.text];
+        }
     }
 }
 

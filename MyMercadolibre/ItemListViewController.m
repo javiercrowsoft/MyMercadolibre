@@ -39,7 +39,7 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
+        
     [self getItemList];
 }
 
@@ -207,7 +207,12 @@
 {
     MeliAPIHTTPClient *client = [MeliAPIHTTPClient sharedMeliAPIHTTPClient];
     client.delegate = self;
-    [client updateItemListForUserId:self.sellerId];
+    if (self.searchText) {
+        [client updateItemListForText:self.searchText];
+    }
+    else {
+        [client updateItemListForUserId:self.sellerId];
+    }
 }
 
 

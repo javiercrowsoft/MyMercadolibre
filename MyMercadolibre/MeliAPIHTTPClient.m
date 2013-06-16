@@ -51,5 +51,22 @@
           }];
 }
 
+- (void)updateItemListForText:(NSString *)searchText
+{
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+    [parameters setObject:searchText forKey:@"q"];
+    
+    [self getPath:@"search"
+       parameters:parameters
+          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+              if([self.delegate respondsToSelector:@selector(meliAPIHTTPClient:didUpdateWithItems:)])
+                  [self.delegate meliAPIHTTPClient:self didUpdateWithItems:responseObject];
+          }
+          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              if([self.delegate respondsToSelector:@selector(meliAPIHTTPClient:didFailWithError:)])
+                  [self.delegate meliAPIHTTPClient:self didFailWithError:error];
+          }];
+}
+
 @end
 

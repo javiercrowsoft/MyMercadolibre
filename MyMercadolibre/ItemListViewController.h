@@ -13,4 +13,6 @@
 
 @property (strong, nonatomic) NSString *sellerId;
 
+@property (strong, nonatomic) NSString *searchText;
+
 @end
