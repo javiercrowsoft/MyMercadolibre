@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MeliAPIHTTPItemDetail.h"
 
-@interface ItemViewController : UIViewController
+@interface ItemViewController : UIViewController <MeliAPIHTTPItemDetailDelegate>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+
+@property (strong, nonatomic) NSString *itemId;
 
 @end

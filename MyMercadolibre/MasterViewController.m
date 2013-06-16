@@ -12,7 +12,7 @@
 
 @interface MasterViewController ()
 
-@property(strong) NSDictionary *response;
+@property(strong, nonatomic) NSDictionary *response;
 
 - (void)getSellers;
 
@@ -154,13 +154,13 @@
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         NSArray *data = [self.response objectForKey:@"data"];
         NSDictionary *seller = [data objectAtIndex:indexPath.row];
-        NSString *seller_name = [seller objectForKey:@"seller_name"];
-        NSString *item_name = [seller objectForKey:@"item_name"];
-        NSString *seller_id = [seller objectForKey:@"seller_id"];
+        NSString *sellerName = [seller objectForKey:@"seller_name"];
+        NSString *itemName = [seller objectForKey:@"item_name"];
+        NSString *sellerId = [seller objectForKey:@"seller_id"];
         id destination = [segue destinationViewController];
-        [destination setSellerName:seller_name];
-        [destination setDetailItem:item_name];
-        [destination setSellerId:seller_id];
+        [destination setSellerName:sellerName];
+        [destination setDetailItem:itemName];
+        [destination setSellerId:sellerId];
     }
 }
 

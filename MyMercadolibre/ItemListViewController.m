@@ -9,10 +9,11 @@
 #import "ItemListViewController.h"
 #import "UIImageView+AFNetworking.h"
 #import "MeliCurrencies.h"
+#import "ItemViewController.h"
 
 @interface ItemListViewController ()
 
-@property(strong) NSDictionary *response;
+@property(strong, nonatomic) NSDictionary *response;
 
 - (void)getItemList;
 
@@ -155,18 +156,32 @@
     return YES;
 }
 */
-
+/*
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Navigation logic may go here. Create and push another view controller.
-    /*
+    
      <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
      // ...
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+     
+}
+*/
+
+#pragma mark - Segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"showItem"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        NSArray *data = [self.response objectForKey:@"results"];
+        NSDictionary *item = [data objectAtIndex:indexPath.row];
+        NSString *itemId = [item objectForKey:@"id"];
+        [[segue destinationViewController] setItemId:itemId];
+    }
 }
 
 #pragma mark - Delegate Implementation
@@ -186,7 +201,7 @@
     [av show];
 }
 
-#pragma mark - Delegate Implementation
+#pragma mark - get content from Meli
 
 - (void)getItemList
 {
@@ -194,5 +209,6 @@
     client.delegate = self;
     [client updateItemListForUserId:self.sellerId];
 }
+
 
 @end

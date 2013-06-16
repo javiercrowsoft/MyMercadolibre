@@ -47,6 +47,7 @@
 		3BE168C1176D2A0400223015 /* icon-retina.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BE168C0176D2A0400223015 /* icon-retina.png */; };
 		3BE168C3176D324A00223015 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BE168C2176D324A00223015 /* background.png */; };
 		3BE168C6176D3BEE00223015 /* ItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE168C5176D3BEE00223015 /* ItemViewController.m */; };
+		3BE16916176D5FA500223015 /* MeliAPIHTTPItemDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE16915176D5FA500223015 /* MeliAPIHTTPItemDetail.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +124,8 @@
 		3BE168C2176D324A00223015 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = MyMercadolibre/Images/background.png; sourceTree = "<group>"; };
 		3BE168C4176D3BEE00223015 /* ItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemViewController.h; sourceTree = "<group>"; };
 		3BE168C5176D3BEE00223015 /* ItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemViewController.m; sourceTree = "<group>"; };
+		3BE16914176D5FA400223015 /* MeliAPIHTTPItemDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeliAPIHTTPItemDetail.h; sourceTree = "<group>"; };
+		3BE16915176D5FA500223015 /* MeliAPIHTTPItemDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeliAPIHTTPItemDetail.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +231,8 @@
 				3B5C427B176B9C58002E13D9 /* MeliHTTPClient.m */,
 				3B5C427D176C7C85002E13D9 /* MeliAPIHTTPClient.h */,
 				3B5C427E176C7C85002E13D9 /* MeliAPIHTTPClient.m */,
+				3BE16914176D5FA400223015 /* MeliAPIHTTPItemDetail.h */,
+				3BE16915176D5FA500223015 /* MeliAPIHTTPItemDetail.m */,
 				3BE168B4176D131C00223015 /* MeliCurrencies.h */,
 				3BE168B5176D131C00223015 /* MeliCurrencies.m */,
 				3BE168AC176CC28900223015 /* Images */,
@@ -420,6 +425,7 @@
 				3BE168B1176CC79400223015 /* ItemListViewController.m in Sources */,
 				3BE168B6176D131C00223015 /* MeliCurrencies.m in Sources */,
 				3BE168C6176D3BEE00223015 /* ItemViewController.m in Sources */,
+				3BE16916176D5FA500223015 /* MeliAPIHTTPItemDetail.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
