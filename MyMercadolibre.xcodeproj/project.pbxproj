@@ -49,6 +49,7 @@
 		3BE168C6176D3BEE00223015 /* ItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE168C5176D3BEE00223015 /* ItemViewController.m */; };
 		3BE16916176D5FA500223015 /* MeliAPIHTTPItemDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE16915176D5FA500223015 /* MeliAPIHTTPItemDetail.m */; };
 		3BE16919176D9B2F00223015 /* WebMeliViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE16918176D9B2F00223015 /* WebMeliViewController.m */; };
+		3BE1691B176DCB3100223015 /* icon-transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BE1691A176DCB3100223015 /* icon-transparent.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +130,7 @@
 		3BE16915176D5FA500223015 /* MeliAPIHTTPItemDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeliAPIHTTPItemDetail.m; sourceTree = "<group>"; };
 		3BE16917176D9B2E00223015 /* WebMeliViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebMeliViewController.h; sourceTree = "<group>"; };
 		3BE16918176D9B2F00223015 /* WebMeliViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebMeliViewController.m; sourceTree = "<group>"; };
+		3BE1691A176DCB3100223015 /* icon-transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-transparent.png"; path = "MyMercadolibre/Images/icon-transparent.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,6 +287,7 @@
 		3BE168AC176CC28900223015 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3BE1691A176DCB3100223015 /* icon-transparent.png */,
 				3BE168BD176D28DC00223015 /* icon.png */,
 				3BE168C0176D2A0400223015 /* icon-retina.png */,
 				3BE168C2176D324A00223015 /* background.png */,
@@ -377,6 +380,7 @@
 				3BE168BF176D294400223015 /* icon.png in Resources */,
 				3BE168C1176D2A0400223015 /* icon-retina.png in Resources */,
 				3BE168C3176D324A00223015 /* background.png in Resources */,
+				3BE1691B176DCB3100223015 /* icon-transparent.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
