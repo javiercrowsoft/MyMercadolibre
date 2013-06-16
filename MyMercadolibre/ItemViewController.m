@@ -16,10 +16,15 @@
 @property(nonatomic) float rotation;
 @property(nonatomic) NSInteger pictureLoadedCount;
 @property(nonatomic) NSInteger pictureCount;
+@property(nonatomic) NSInteger pictureSelected;
+@property(strong, nonatomic) NSMutableArray *pictures;
 
 - (void)getItem;
 - (void)loadImages;
 - (void)loadAnImageFromUrl:(NSString *)imageUrl;
+
+- (void)attachSwipeGestureToView:(UIView *)view;
+- (void)handleSwipe:(UITapGestureRecognizer *)recognizer;
 
 @end
 
@@ -29,9 +34,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.rotation = 0;
-        self.pictureLoadedCount = 0;
-        self.pictureCount = 0;
+        // Custom initialization        
     }
     return self;
 }
@@ -40,6 +43,11 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+
+    self.rotation = 0;
+    self.pictureLoadedCount = 0;
+    self.pictureCount = 0;
+    self.pictures = [[NSMutableArray alloc] init];
     
     [self.scrollView setScrollEnabled:YES];
     [self.scrollView setContentSize:CGSizeMake(320,2900)];
@@ -99,25 +107,53 @@
     operation = [AFImageRequestOperation imageRequestOperationWithRequest:request
                                                      imageProcessingBlock:nil
                                                                   success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
-                                                                      self.rotation += 0.1;
+                                                                      self.rotation += 0.05;
                                                                       UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
                                                                       imageView.frame = CGRectMake(50, 20, 200, 200);
                                                                       imageView.contentMode = UIViewContentModeScaleAspectFit;
                                                                       imageView.layer.masksToBounds = YES;
                                                                       imageView.layer.borderColor = [UIColor blackColor].CGColor;
                                                                       imageView.backgroundColor = [UIColor whiteColor];
-                                                                      imageView.layer.borderWidth = 6;
+                                                                      imageView.layer.borderWidth = 3;
                                                                       self.pictureLoadedCount += 1;
                                                                       if (self.pictureLoadedCount < self.pictureCount) {
                                                                           imageView.transform = CGAffineTransformMakeRotation(self.rotation);
                                                                       }
+                                                                      [self.pictures addObject:imageView];
                                                                       [self.scrollView addSubview:imageView];
+                                                                      [self attachSwipeGestureToView:imageView];
+                                                                      self.pictureSelected = self.pictureLoadedCount;
+                                                                      imageView.userInteractionEnabled = YES;
                                                                   }
                                                                   failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
                                                                       NSLog(@"%@", [error localizedDescription]);
                                                                   }];
     [operation start];
 
+}
+
+- (void)attachSwipeGestureToView:(UIView *)view
+{
+    UISwipeGestureRecognizer *oneFingerSwipeUp = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
+    [oneFingerSwipeUp setDirection:UISwipeGestureRecognizerDirectionRight];
+    [view addGestureRecognizer:oneFingerSwipeUp];
+}
+
+- (void)handleSwipe:(UISwipeGestureRecognizer *)recognizer
+{
+    UIImageView *currentImageView = [self.pictures objectAtIndex:self.pictureSelected -1];
+    self.pictureSelected -= 1;
+    if (self.pictureSelected < 1) {
+        self.pictureSelected = self.pictureLoadedCount;
+    }
+    UIImageView *imageView = [self.pictures objectAtIndex:self.pictureSelected -1];
+    self.rotation += 0.05;
+    if (self.rotation > 0.25) {
+        self.rotation = 0.05;
+    }
+    currentImageView.transform = CGAffineTransformMakeRotation(self.rotation);
+    [self.scrollView bringSubviewToFront:imageView];
+    imageView.transform = CGAffineTransformMakeRotation(0);
 }
 
 @end
