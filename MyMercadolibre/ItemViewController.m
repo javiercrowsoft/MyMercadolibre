@@ -11,8 +11,14 @@
 #import <QuartzCore/QuartzCore.h>
 #import "MeliCurrencies.h"
 #import "WebMeliViewController.h"
+#import "FollowViewController.h"
 
 @interface ItemViewController ()
+
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *priceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 
 @property(strong, nonatomic) NSDictionary *response;
 @property(nonatomic) float rotation;
@@ -23,6 +29,7 @@
 @property(strong, nonatomic) NSString *permalink;
 
 - (void)getItem;
+- (void)loadSeller;
 - (void)loadImages;
 - (void)loadAnImageFromUrl:(NSString *)imageUrl;
 
@@ -71,6 +78,11 @@
     if ([[segue identifier] isEqualToString:@"showMeliWebPage"]) {        
         [[segue destinationViewController] setPermalink:self.permalink];
     }
+    else {
+        if ([[segue identifier] isEqualToString:@"showFollow"]) {
+            [[segue destinationViewController] setSellerName:self.sellerName];
+        }    
+    }
 }
 
 #pragma mark - Delegate Implementation
@@ -100,12 +112,27 @@
     
     self.permalink = [self.response objectForKey:@"permalink"];
     
+    [self loadSeller];
     [self loadImages];
 }
 
 - (void)meliAPIHTTPItemDetail:(MeliAPIHTTPItemDetail *)client didFailWithError:(NSError *)error
 {
     UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Error Retrieving Items for a Seller"
+                                                 message:[NSString stringWithFormat:@"%@",error]
+                                                delegate:nil
+                                       cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [av show];
+}
+
+- (void)meliAPIHTTPUser:(MeliAPIHTTPItemDetail *)client didUpdateWithSeller:(id)seller
+{
+    self.sellerName = [seller objectForKey:@"nickname"];
+}
+
+- (void)meliAPIHTTPUser:(MeliAPIHTTPItemDetail *)client didFailWithError:(NSError *)error
+{
+    UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Error Retrieving Seller for an Item"
                                                  message:[NSString stringWithFormat:@"%@",error]
                                                 delegate:nil
                                        cancelButtonTitle:@"OK" otherButtonTitles:nil];
@@ -122,6 +149,16 @@
     client.delegate = self;
     [client updateItemForItemId:self.itemId];
 }
+
+- (void)loadSeller
+{
+    self.sellerName = @"";
+    NSString *sellerId = [[self.response objectForKey:@"seller_id"] description];
+    MeliAPIHTTPUser *client = [MeliAPIHTTPUser sharedMeliAPIHTTPUser];
+    client.delegate = self;
+    [client updateSellerForSellerId:sellerId];
+}
+
 
 - (void)loadImages
 {

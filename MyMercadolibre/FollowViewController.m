@@ -1,20 +1,20 @@
 //
-//  WebMeliViewController.m
+//  FollowViewController.m
 //  MyMercadolibre
 //
 //  Created by Javier Alvarez on 6/16/13.
 //  Copyright (c) 2013 Javier Alvarez. All rights reserved.
 //
 
-#import "WebMeliViewController.h"
+#import "FollowViewController.h"
 
-@interface WebMeliViewController ()
+@interface FollowViewController ()
 
-@property (weak, nonatomic) IBOutlet UIWebView *webView;
+@property (weak, nonatomic) IBOutlet UILabel *descripLabel;
 
 @end
 
-@implementation WebMeliViewController
+@implementation FollowViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,9 +30,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    NSURL *url = [NSURL URLWithString:self.permalink];
-    NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-    [self.webView loadRequest:requestObj];
+    self.descripLabel.text = [NSString stringWithFormat:@"You are following %@ now. We will notify you everytime he publish new offers.\n\nIf you like to receive the notification on your email you can go to our web site and create an account.", self.sellerName];
 }
 
 - (void)didReceiveMemoryWarning

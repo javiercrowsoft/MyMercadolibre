@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B5C1038176DD6FB008C9179 /* FollowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5C1037176DD6FB008C9179 /* FollowViewController.m */; };
+		3B5C103B176DDC3E008C9179 /* MeliAPIHTTPUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5C103A176DDC3E008C9179 /* MeliAPIHTTPUser.m */; };
 		3B5C4239176B674E002E13D9 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5C4238176B674E002E13D9 /* LoginViewController.m */; };
 		3B5C424E176B8CF7002E13D9 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5C423C176B8CF7002E13D9 /* AFHTTPClient.m */; };
 		3B5C424F176B8CF7002E13D9 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5C423E176B8CF7002E13D9 /* AFHTTPRequestOperation.m */; };
@@ -63,6 +65,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3B5C1036176DD6FB008C9179 /* FollowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FollowViewController.h; sourceTree = "<group>"; };
+		3B5C1037176DD6FB008C9179 /* FollowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FollowViewController.m; sourceTree = "<group>"; };
+		3B5C1039176DDC3E008C9179 /* MeliAPIHTTPUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeliAPIHTTPUser.h; sourceTree = "<group>"; };
+		3B5C103A176DDC3E008C9179 /* MeliAPIHTTPUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeliAPIHTTPUser.m; sourceTree = "<group>"; };
 		3B5C4237176B674E002E13D9 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		3B5C4238176B674E002E13D9 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		3B5C423B176B8CF7002E13D9 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
@@ -232,6 +238,8 @@
 				3BE168B0176CC79400223015 /* ItemListViewController.m */,
 				3BE168C4176D3BEE00223015 /* ItemViewController.h */,
 				3BE168C5176D3BEE00223015 /* ItemViewController.m */,
+				3B5C1036176DD6FB008C9179 /* FollowViewController.h */,
+				3B5C1037176DD6FB008C9179 /* FollowViewController.m */,
 				3BE16917176D9B2E00223015 /* WebMeliViewController.h */,
 				3BE16918176D9B2F00223015 /* WebMeliViewController.m */,
 				3B5C427A176B9C58002E13D9 /* MeliHTTPClient.h */,
@@ -240,6 +248,8 @@
 				3B5C427E176C7C85002E13D9 /* MeliAPIHTTPClient.m */,
 				3BE16914176D5FA400223015 /* MeliAPIHTTPItemDetail.h */,
 				3BE16915176D5FA500223015 /* MeliAPIHTTPItemDetail.m */,
+				3B5C1039176DDC3E008C9179 /* MeliAPIHTTPUser.h */,
+				3B5C103A176DDC3E008C9179 /* MeliAPIHTTPUser.m */,
 				3BE168B4176D131C00223015 /* MeliCurrencies.h */,
 				3BE168B5176D131C00223015 /* MeliCurrencies.m */,
 				3BE168AC176CC28900223015 /* Images */,
@@ -436,6 +446,8 @@
 				3BE168C6176D3BEE00223015 /* ItemViewController.m in Sources */,
 				3BE16916176D5FA500223015 /* MeliAPIHTTPItemDetail.m in Sources */,
 				3BE16919176D9B2F00223015 /* WebMeliViewController.m in Sources */,
+				3B5C1038176DD6FB008C9179 /* FollowViewController.m in Sources */,
+				3B5C103B176DDC3E008C9179 /* MeliAPIHTTPUser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

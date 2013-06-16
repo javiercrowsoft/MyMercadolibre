@@ -7,19 +7,6 @@
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "MyMercadolibre/DetailViewController.m"
-         timestampString = "393068794.678213"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "88"
-         endingLineNumber = "88"
-         landmarkName = "-prepareForSegue:sender:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
          filePath = "MyMercadolibre/ItemListViewController.m"
          timestampString = "393068827.339129"
          startingColumnNumber = "9223372036854775807"
@@ -27,6 +14,19 @@
          startingLineNumber = "26"
          endingLineNumber = "26"
          landmarkName = "-initWithStyle:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "MyMercadolibre/MeliAPIHTTPUser.m"
+         timestampString = "393077038.389229"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "46"
+         endingLineNumber = "46"
+         landmarkName = "-updateSellerForSellerId:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

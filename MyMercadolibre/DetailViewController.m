@@ -12,6 +12,10 @@
 @interface DetailViewController ()
 
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
+
+@property (weak, nonatomic) IBOutlet UILabel *detailSellerLabel;
+@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+
 - (void)configureView;
 
 @end
@@ -85,7 +89,9 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"showItemList"]) {
-        [[segue destinationViewController] setSellerId:self.sellerId];
+        id destination = [segue destinationViewController];
+        [destination setSellerId:self.sellerId];
+        [destination setSellerName:self.sellerName];
     }
 }
 

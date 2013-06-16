@@ -180,7 +180,9 @@
         NSArray *data = [self.response objectForKey:@"results"];
         NSDictionary *item = [data objectAtIndex:indexPath.row];
         NSString *itemId = [item objectForKey:@"id"];
-        [[segue destinationViewController] setItemId:itemId];
+        id destination = [segue destinationViewController];
+        [destination setItemId:itemId];
+        [destination setSellerName:self.sellerName];
     }
 }
 

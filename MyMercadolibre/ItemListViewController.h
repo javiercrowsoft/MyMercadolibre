@@ -12,7 +12,7 @@
 @interface ItemListViewController : UITableViewController <MeliAPIHTTPClientDelegate>
 
 @property (strong, nonatomic) NSString *sellerId;
-
 @property (strong, nonatomic) NSString *searchText;
+@property (strong, nonatomic) NSString *sellerName;
 
 @end

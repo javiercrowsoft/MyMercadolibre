@@ -1,5 +1,5 @@
 //
-//  WebMeliViewController.h
+//  FollowViewController.h
 //  MyMercadolibre
 //
 //  Created by Javier Alvarez on 6/16/13.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WebMeliViewController : UIViewController
+@interface FollowViewController : UIViewController
 
-@property (strong, nonatomic) NSString *permalink;
+@property(strong, nonatomic) NSString *sellerName;
 
 @end

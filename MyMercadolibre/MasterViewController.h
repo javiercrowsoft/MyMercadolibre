@@ -14,7 +14,6 @@
 @interface MasterViewController : UITableViewController <MeliHTTPClientDelegate>
 
 @property (strong, nonatomic) NSString *nick;
-
 @property (strong, nonatomic) DetailViewController *detailViewController;
 
 @end

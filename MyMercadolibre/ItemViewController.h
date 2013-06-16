@@ -8,17 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "MeliAPIHTTPItemDetail.h"
+#import "MeliAPIHTTPUser.h"
 
-@interface ItemViewController : UIViewController <MeliAPIHTTPItemDetailDelegate>
-
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-
-@property (weak, nonatomic) IBOutlet UILabel *priceLabel;
-
-@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
+@interface ItemViewController : UIViewController <MeliAPIHTTPItemDetailDelegate, MeliAPIHTTPUserDelegate>
 
 @property (strong, nonatomic) NSString *itemId;
+@property (strong, nonatomic) NSString *sellerName;
 
 @end

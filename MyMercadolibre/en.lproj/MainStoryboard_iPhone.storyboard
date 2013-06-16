@@ -378,10 +378,10 @@
             </objects>
             <point key="canvasLocation" x="577" y="-152"/>
         </scene>
-        <!--View Controller-->
+        <!--Follow View Controller-->
         <scene sceneID="qDf-R3-1S6">
             <objects>
-                <viewController id="mcl-PH-Njz" sceneMemberID="viewController">
+                <viewController id="mcl-PH-Njz" customClass="FollowViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HmX-P2-qJq">
                         <rect key="frame" x="0.0" y="64" width="320" height="440"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -423,17 +423,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="taC-rD-Zyj" firstAttribute="top" secondItem="Y46-D7-Via" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="2bu-mK-dBh"/>
                             <constraint firstItem="rKb-yi-sVu" firstAttribute="top" secondItem="HmX-P2-qJq" secondAttribute="top" type="default" id="6FW-NL-JhC"/>
-                            <constraint firstItem="taC-rD-Zyj" firstAttribute="leading" secondItem="HmX-P2-qJq" secondAttribute="leading" constant="13" id="GIL-5p-XF2"/>
-                            <constraint firstItem="kIT-JM-upc" firstAttribute="top" secondItem="HmX-P2-qJq" secondAttribute="top" constant="20" symbolic="YES" type="default" id="R1A-aC-yA4"/>
+                            <constraint firstItem="taC-rD-Zyj" firstAttribute="leading" secondItem="HmX-P2-qJq" secondAttribute="leading" constant="14" id="EIA-cI-guv"/>
+                            <constraint firstItem="kIT-JM-upc" firstAttribute="top" secondItem="HmX-P2-qJq" secondAttribute="top" constant="3" id="K9B-Px-4qY"/>
                             <constraint firstItem="rKb-yi-sVu" firstAttribute="centerX" secondItem="kIT-JM-upc" secondAttribute="centerX" type="default" id="TjL-Ve-h2T"/>
-                            <constraint firstItem="Y46-D7-Via" firstAttribute="top" secondItem="HmX-P2-qJq" secondAttribute="top" constant="180" id="eHa-Gt-HEk"/>
                             <constraint firstItem="taC-rD-Zyj" firstAttribute="centerX" secondItem="Y46-D7-Via" secondAttribute="centerX" type="default" id="jKr-Vg-V7P"/>
+                            <constraint firstItem="Y46-D7-Via" firstAttribute="top" secondItem="HmX-P2-qJq" secondAttribute="top" constant="181" id="jNw-ZL-3xf"/>
                             <constraint firstItem="rKb-yi-sVu" firstAttribute="leading" secondItem="HmX-P2-qJq" secondAttribute="leading" type="default" id="q25-ug-KZO"/>
-                            <constraint firstItem="taC-rD-Zyj" firstAttribute="top" secondItem="Y46-D7-Via" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="sD9-K9-Iez"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="cTv-K4-Xe3"/>
+                    <connections>
+                        <outlet property="descripLabel" destination="kIT-JM-upc" id="1K0-8p-qL0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="99x-6f-7w3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -555,6 +558,12 @@
             <relationships>
                 <relationship kind="outlet" name="detailDescriptionLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="detailSellerLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="FollowViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FollowViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="descripLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="ItemListViewController" superclassName="UITableViewController">
