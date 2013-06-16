@@ -53,7 +53,7 @@
     self.pictures = [[NSMutableArray alloc] init];
     
     [self.scrollView setScrollEnabled:YES];
-    [self.scrollView setContentSize:CGSizeMake(320,2900)];
+    [self.scrollView setContentSize:CGSizeMake(320,500)];
     
     [self getItem];
 }
@@ -142,7 +142,7 @@
                                                                   success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
                                                                       self.rotation += 0.05;
                                                                       UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
-                                                                      imageView.frame = CGRectMake(50, 20, 200, 200);
+                                                                      imageView.frame = CGRectMake(20, 20, 250, 250);
                                                                       imageView.contentMode = UIViewContentModeScaleAspectFit;
                                                                       imageView.layer.masksToBounds = YES;
                                                                       imageView.layer.borderColor = [UIColor blackColor].CGColor;
@@ -168,7 +168,7 @@
 - (void)attachSwipeGestureToView:(UIView *)view
 {
     UISwipeGestureRecognizer *oneFingerSwipeUp = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
-    [oneFingerSwipeUp setDirection:UISwipeGestureRecognizerDirectionRight];
+    [oneFingerSwipeUp setDirection:UISwipeGestureRecognizerDirectionRight | UISwipeGestureRecognizerDirectionLeft];
     [view addGestureRecognizer:oneFingerSwipeUp];
 }
 
