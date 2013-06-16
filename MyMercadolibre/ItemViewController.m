@@ -9,6 +9,8 @@
 #import "ItemViewController.h"
 #import "AFImageRequestOperation.h"
 #import <QuartzCore/QuartzCore.h>
+#import "MeliCurrencies.h"
+#import "WebMeliViewController.h"
 
 @interface ItemViewController ()
 
@@ -18,6 +20,7 @@
 @property(nonatomic) NSInteger pictureCount;
 @property(nonatomic) NSInteger pictureSelected;
 @property(strong, nonatomic) NSMutableArray *pictures;
+@property(strong, nonatomic) NSString *permalink;
 
 - (void)getItem;
 - (void)loadImages;
@@ -61,11 +64,42 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"showMeliWebPage"]) {        
+        [[segue destinationViewController] setPermalink:self.permalink];
+    }
+}
+
 #pragma mark - Delegate Implementation
 
 - (void)meliAPIHTTPItemDetail:(MeliAPIHTTPItemDetail *)client didUpdateWithItems:(id)items
 {
     self.response = items;
+    
+    self.titleLabel.text = [self.response objectForKey:@"title"];
+    NSString *subtitle = [self.response objectForKey:@"subtitle"];
+    if (![subtitle isKindOfClass:[NSNull class]]) {
+        self.descriptionLabel.text = subtitle;
+    }
+    else {
+        self.descriptionLabel.text = @"";
+    }
+    
+    MeliCurrencies *curencies = [MeliCurrencies sharedMeliCurrencies];
+    
+    NSNumber *price = [self.response objectForKey:@"price"];
+    if (![price isKindOfClass:[NSNull class]]) {
+        self.priceLabel.text = [curencies priceFromNumber:price WithCurrencyName:[self.response objectForKey:@"currency_id"]];
+    }
+    else {
+        self.priceLabel.text = @"-";
+    }
+    
+    self.permalink = [self.response objectForKey:@"permalink"];
+    
     [self loadImages];
 }
 
@@ -91,7 +125,6 @@
 
 - (void)loadImages
 {
-    
     NSArray *pictures = [self.response objectForKey:@"pictures"];
     self.pictureCount = [pictures count];
     for (id picture in pictures) {

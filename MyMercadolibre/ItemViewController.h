@@ -12,7 +12,10 @@
 @interface ItemViewController : UIViewController <MeliAPIHTTPItemDetailDelegate>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *priceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 @property (strong, nonatomic) NSString *itemId;
 
 @end
