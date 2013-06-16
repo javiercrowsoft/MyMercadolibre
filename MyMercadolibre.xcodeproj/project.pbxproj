@@ -46,6 +46,7 @@
 		3BE168BF176D294400223015 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BE168BD176D28DC00223015 /* icon.png */; };
 		3BE168C1176D2A0400223015 /* icon-retina.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BE168C0176D2A0400223015 /* icon-retina.png */; };
 		3BE168C3176D324A00223015 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BE168C2176D324A00223015 /* background.png */; };
+		3BE168C6176D3BEE00223015 /* ItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE168C5176D3BEE00223015 /* ItemViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,9 +118,11 @@
 		3BE168B4176D131C00223015 /* MeliCurrencies.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeliCurrencies.h; sourceTree = "<group>"; };
 		3BE168B5176D131C00223015 /* MeliCurrencies.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeliCurrencies.m; sourceTree = "<group>"; };
 		3BE168BA176D28C300223015 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = placeholder.png; path = MyMercadolibre/Images/placeholder.png; sourceTree = "<group>"; };
-		3BE168BD176D28DC00223015 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
-		3BE168C0176D2A0400223015 /* icon-retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-retina.png"; sourceTree = "<group>"; };
-		3BE168C2176D324A00223015 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		3BE168BD176D28DC00223015 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = MyMercadolibre/Images/icon.png; sourceTree = "<group>"; };
+		3BE168C0176D2A0400223015 /* icon-retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-retina.png"; path = "MyMercadolibre/Images/icon-retina.png"; sourceTree = "<group>"; };
+		3BE168C2176D324A00223015 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = MyMercadolibre/Images/background.png; sourceTree = "<group>"; };
+		3BE168C4176D3BEE00223015 /* ItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemViewController.h; sourceTree = "<group>"; };
+		3BE168C5176D3BEE00223015 /* ItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,8 +180,6 @@
 		3BD3C28C176A4B9A004CC1D0 = {
 			isa = PBXGroup;
 			children = (
-				3BE168C0176D2A0400223015 /* icon-retina.png */,
-				3BE168BD176D28DC00223015 /* icon.png */,
 				3BD3C29E176A4B9A004CC1D0 /* MyMercadolibre */,
 				3BD3C2C8176A4B9B004CC1D0 /* MyMercadolibreTests */,
 				3BD3C297176A4B9A004CC1D0 /* Frameworks */,
@@ -221,6 +222,8 @@
 				3BD3C2BA176A4B9B004CC1D0 /* DetailViewController.m */,
 				3BE168AF176CC79400223015 /* ItemListViewController.h */,
 				3BE168B0176CC79400223015 /* ItemListViewController.m */,
+				3BE168C4176D3BEE00223015 /* ItemViewController.h */,
+				3BE168C5176D3BEE00223015 /* ItemViewController.m */,
 				3B5C427A176B9C58002E13D9 /* MeliHTTPClient.h */,
 				3B5C427B176B9C58002E13D9 /* MeliHTTPClient.m */,
 				3B5C427D176C7C85002E13D9 /* MeliAPIHTTPClient.h */,
@@ -272,6 +275,8 @@
 		3BE168AC176CC28900223015 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3BE168BD176D28DC00223015 /* icon.png */,
+				3BE168C0176D2A0400223015 /* icon-retina.png */,
 				3BE168C2176D324A00223015 /* background.png */,
 				3BE168BA176D28C300223015 /* placeholder.png */,
 				3BE168AD176CC2FE00223015 /* shame.png */,
@@ -414,6 +419,7 @@
 				3B5C427F176C7C85002E13D9 /* MeliAPIHTTPClient.m in Sources */,
 				3BE168B1176CC79400223015 /* ItemListViewController.m in Sources */,
 				3BE168B6176D131C00223015 /* MeliCurrencies.m in Sources */,
+				3BE168C6176D3BEE00223015 /* ItemViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

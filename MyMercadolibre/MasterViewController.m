@@ -83,11 +83,7 @@
     UILabel *itemBoughtLabel = (UILabel *)[cell viewWithTag:102];
     itemBoughtLabel.text = [seller objectForKey:@"item_name"];
 
-    UIImageView *itemImageView = (UIImageView *)[cell viewWithTag:100];
-    
     NSString *itemId = [seller objectForKey:@"item_id"];
-    
-    itemImageView.image = nil;
     
     __weak UITableViewCell *weakCell = cell;
     
